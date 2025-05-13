@@ -47,8 +47,8 @@ $ npm run start:server
 ## ENV - Auth0 setup
 | Key | Value |
 |--|--|
-| AUTH0_DOMAIN | https://dev-j4px7xxxxxxxxx.us.auth0.com |
+| AUTH0_DOMAIN | https://dxev-j4px7xxxxxxxxxxx.uxs.auth0.com |
 | AUTH0_CLIENT_ID | QpPgcLV2lCjzzxxxxxxxxxxxxxxx |
-| AUTH0_CLIENT_SECRET | wRwZgAZY9mlsix0yxxxxxxx_xxxxxxx7yLjX |
-| AUTH0_SECRET | c751785aaxxxxxxxxxxxxxxxx4b55fd3 |
+| AUTH0_CLIENT_SECRET | xxx0yxxxxxxx_xxxxxxxxx |
+| AUTH0_SECRET | xxxxxxxxxxxxxxxx4bad |
 | AUTH0_APP_BASE_URL | http://localhost:3000 |
