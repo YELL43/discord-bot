@@ -1,0 +1,22 @@
+meta {
+  name: get list applications
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{HOST}}/api/portals/console/applications
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~page: 1
+  ~app_type: regular_web,spa
+  ~take: 2
+  ~q: client_id:"QpPgcLV2lCjzzQahskNM0IbxW8tICgak"
+}
+
+auth:bearer {
+  token: {{COOKIE_ID_TOKEN}}
+}

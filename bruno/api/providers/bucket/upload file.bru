@@ -1,0 +1,20 @@
+meta {
+  name: upload file
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{HOST}}/api/providers/bucket/upload
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{COOKIE_ID_TOKEN}}
+}
+
+body:multipart-form {
+  file: @file(/Users/paneet/Documents/FILE-TEST-UPLOAD/picture/photo-1598124146163-36819847286d.jpeg)
+  root: images
+}

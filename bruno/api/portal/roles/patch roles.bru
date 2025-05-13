@@ -1,0 +1,27 @@
+meta {
+  name: patch roles
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{HOST}}/api/portals/roles/:id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  id: 1
+}
+
+auth:bearer {
+  token: {{COOKIE_ID_TOKEN}}
+}
+
+body:json {
+  {
+    "code": "100sdsd1_04",
+    "name": "admin 5",
+    "desc": "test sdsdcsd" //-- optional
+  }
+}

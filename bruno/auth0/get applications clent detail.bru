@@ -1,0 +1,24 @@
+meta {
+  name: get applications clent detail
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{AUTH0_HOST}}/api/v2/clients/{{client_id}}/credentials/{{credential_id}}
+  body: none
+  auth: bearer
+}
+
+headers {
+  : 
+}
+
+auth:bearer {
+  token: {{RES_ACCESS_TOKEN}}
+}
+
+vars:pre-request {
+  client_id: QpPgcLV2lCjzzQahskNM0IbxW8tICgak
+  credential_id: cred_7WKzWJP1T1hM857uUHDM8g
+}

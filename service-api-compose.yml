@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  api:
+    image: <<ECR_HOST>>/<<ECR_REPO>>:<<ECR_API_VERSION>>
+    container_name: paneet-api
+    # restart: always
+    ports:
+      - "4000:4000"
+    env_file:
+      - <<ENV_FILE>>
+    networks:
+      - paneet_app
+
+networks:
+  paneet_app: 
+    driver: bridge

@@ -1,0 +1,24 @@
+meta {
+  name: get access token
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{AUTH0_HOST}}/oauth/token
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "client_id": "{{AUTH0_CLIENT_ID}}",
+    "client_secret": "{{AUTH0_CLENT_SECRET}}",
+    "audience": "{{AUTH0_HOST}}/api/v2/",
+    "grant_type": "client_credentials"
+  }
+}
+
+script:post-response {
+  bru.setVar('RES_ACCESS_TOKEN', res.body?.access_token);
+}

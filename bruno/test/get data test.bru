@@ -1,0 +1,28 @@
+meta {
+  name: get data test
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{HOST}}/api/test
+  body: none
+  auth: none
+}
+
+tests {
+  test("should be able to login", function () {
+    const data = res.getBody();
+    expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("should be response meta code 20000 if call api [GET]", function () {
+    const data = res.getBody();
+    expect(data?.meta?.response_code).to.equal(20000);
+  });
+  
+  test("should be response meta not code 20000 if call api [GET]", function () {
+    const data = res.getBody();
+    expect(data?.meta?.response_code).not.equal(10000);
+  });
+}

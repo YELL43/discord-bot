@@ -1,0 +1,24 @@
+meta {
+  name: create roles
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{HOST}}/api/portals/roles
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{COOKIE_ID_TOKEN}}
+}
+
+body:json {
+  {
+    "code": "1001_02",
+    "name": "admin",
+    "desc": "test", //-- optional
+    "active": true //-- optional
+  }
+}

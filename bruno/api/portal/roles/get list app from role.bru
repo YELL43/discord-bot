@@ -1,0 +1,15 @@
+meta {
+  name: get list app from role
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{HOST}}/api/portals/roles/list-application
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{COOKIE_ID_TOKEN}}
+}

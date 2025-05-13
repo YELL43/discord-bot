@@ -1,0 +1,21 @@
+meta {
+  name: send discord
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{HOST}}/api/leave
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "type": "annual", //annual, sick ,personal
+    "startDate": "2025-05-02",
+    "endDate": "2025-05-01",
+    "reason": "พักผ่อน",
+    "discordId":"1036844289826770985"
+  }
+}

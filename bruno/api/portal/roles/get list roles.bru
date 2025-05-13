@@ -1,0 +1,20 @@
+meta {
+  name: get list roles
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{HOST}}/api/portals/roles
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~limit: 2
+  ~page: 2
+}
+
+auth:bearer {
+  token: {{COOKIE_ID_TOKEN}}
+}

@@ -1,0 +1,24 @@
+meta {
+  name: get list applications
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{AUTH0_HOST}}/api/v2/clients?fields=name,client_id,app_type,description,logo_uri&include_fields=true
+  body: none
+  auth: bearer
+}
+
+params:query {
+  fields: name,client_id,app_type,description,logo_uri
+  include_fields: true
+}
+
+headers {
+  : 
+}
+
+auth:bearer {
+  token: {{RES_ACCESS_TOKEN}}
+}

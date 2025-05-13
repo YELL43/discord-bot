@@ -1,0 +1,21 @@
+meta {
+  name: verify application
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{HOST}}/api/providers/auth0/application
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{COOKIE_ID_TOKEN}}
+}
+
+body:json {
+  {
+    "code": "1001"
+  }
+}

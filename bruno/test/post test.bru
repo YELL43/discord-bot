@@ -1,0 +1,38 @@
+meta {
+  name: post test
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{HOST}}/api/test
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 201
+}
+
+script:pre-request {
+  const { faker } = require('@faker-js/faker');
+  
+  console.log(faker.name.fullName());
+  
+  req.setBody({
+    name: faker.name.fullName(),
+    email: faker.internet.email(),
+    avatar: faker.image.avatar(),
+    password: faker.internet.password(),
+    birthdate: faker.date.birthdate(),
+    registeredAt: faker.date.past(),
+  });
+}
+
+script:post-response {
+  bru.setVar("tokenUuid",res.body?.data?.uuid)
+}
+
+docs {
+  ![The San Juan Mountains are beautiful!](https://mdg.imgix.net/assets/images/san-juan-mountains.jpg "San Juan Mountains")
+}

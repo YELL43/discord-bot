@@ -1,0 +1,19 @@
+meta {
+  name: get application by client id
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{HOST}}/api/portals/console/application/{{client_id}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{COOKIE_ID_TOKEN}}
+}
+
+vars:pre-request {
+  client_id: q4i3iMVb0JZzAxnMfswQaIms8Pbfp3nv
+}

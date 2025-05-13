@@ -1,0 +1,53 @@
+meta {
+  name: 4 - create script
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{HOST}}/api/test/create/:id?code=ttst
+  body: json
+  auth: bearer
+}
+
+params:query {
+  code: ttst
+}
+
+params:path {
+  id: 1
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkQWNjb3VudCI6Ijk5OSIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE3NDIyMDIzNDUsImV4cCI6MTc0MjI4ODc0NX0.IxWsEJY_cwSabZXjpSkES4Lkc6knS6azRNwyZevcqhA
+}
+
+body:json {
+  {
+    "username": "admin",
+    "password": "123"
+  }
+}
+
+vars:pre-request {
+  : 
+}
+
+assert {
+  res.status: eq 201
+}
+
+tests {
+  test("should be status equal 201", function () {
+    const data = res.getBody();
+    expect(res.getStatus()).to.equal(201);
+  });
+   
+  test("should return json", function () {
+    const data = res.getBody();
+    
+    expect(data.meta).to.deep.include({
+        response_code: 20000,
+      });
+  });
+}

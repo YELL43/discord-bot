@@ -1,0 +1,15 @@
+meta {
+  name: get roles
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{HOST}}/api/providers/auth0/roles
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{COOKIE_ID_TOKEN}}
+}

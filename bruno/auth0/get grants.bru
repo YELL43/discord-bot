@@ -1,0 +1,19 @@
+meta {
+  name: get grants
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{AUTH0_HOST}}/api/v2/grants
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{RES_ACCESS_TOKEN}}
+}
+
+vars:pre-request {
+  user_id: google-oauth2|115729604340722007271
+}

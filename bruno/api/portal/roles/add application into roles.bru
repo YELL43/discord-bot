@@ -1,0 +1,32 @@
+meta {
+  name: add application into roles
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{HOST}}/api/portals/roles/into-application
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{COOKIE_ID_TOKEN}}
+}
+
+body:json {
+  {
+    "roles_id": 3,
+    "applications": [
+      {
+        "client_id": "QpPgcLV2lCjzzQahskNM0IbxW8tICgak"
+      },
+      {
+        "client_id": "MN4h6wY4pgBVL1y2P9o0PIFRWHb44foN"
+      },
+      {
+        "client_id": "gSERFHSIeGz27o4wtHBBiSFca15BR4gF"
+      }
+    ]
+  }
+}

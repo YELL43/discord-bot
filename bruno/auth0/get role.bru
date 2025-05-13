@@ -1,0 +1,19 @@
+meta {
+  name: get role
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{AUTH0_HOST}}/api/v2/users/{{user_id}}/roles
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{RES_ACCESS_TOKEN}}
+}
+
+vars:pre-request {
+  user_id: google-oauth2|115729604340722007271
+}

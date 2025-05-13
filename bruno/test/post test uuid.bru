@@ -1,0 +1,25 @@
+meta {
+  name: post test uuid
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{HOST}}/api/test/uuid
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "token": "{{tokenUuid}}"
+  }
+}
+
+script:post-response {
+  const { funcName } = require('./function/core.js');
+  
+  console.log(res.body?.data);
+  
+  bru.setVar("keyFunc", funcName(res.body?.data?.token))
+}

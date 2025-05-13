@@ -1,0 +1,23 @@
+meta {
+  name: get applications clent
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{AUTH0_HOST}}/api/v2/clients/{{client_id}}
+  body: none
+  auth: bearer
+}
+
+headers {
+  : 
+}
+
+auth:bearer {
+  token: {{RES_ACCESS_TOKEN}}
+}
+
+vars:pre-request {
+  client_id: tckLTp8MopAY6Hq1Ljafgxb9gfMtYSeE
+}

@@ -1,0 +1,26 @@
+meta {
+  name: verify token
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{HOST}}/api/providers/auth0/verify-token
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Ponlawat Koelsuwan",
+    "email": "ponlawat.ko@paneet.co.th",
+    "picture": "https://lh3.googleusercontent.com/a/ACg8ocK8M86gEYDsPaipuL45SQ0KicnLTdUHI5_jYO5PLoHK1Q3DlQ=s96-c",
+    "sub": "google-oauth2|115729604340722007271"
+  }
+}
+
+script:post-response {
+  bru.setVar('COOKIE_ACCESS_TOKEN', res.body?.data?.access_token);
+  bru.setVar('COOKIE_ID_TOKEN', res.body?.data?.id_token);
+  bru.setVar('COOKIE_SESSION_EXPIRE', res.body?.data?.session_expire);
+}
