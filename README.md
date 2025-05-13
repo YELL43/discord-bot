@@ -42,13 +42,3 @@ $ npm run start
 $ npm run start:server
 ```
 
-# การกำหนดค่า Environments ใน Github
-
-## ENV - Auth0 setup
-| Key | Value |
-|--|--|
-| AUTH0_DOMAIN | https://dxev-j4px7xxxxxxxxxxx.uxs.auth0.com |
-| AUTH0_CLIENT_ID | QpPgcLV2lCjzzxxxxxxxxxxxxxxx |
-| AUTH0_CLIENT_SECRET | xxx0yxxxxxxx_xxxxxxxxx |
-| AUTH0_SECRET | xxxxxxxxxxxxxxxx4bad |
-| AUTH0_APP_BASE_URL | http://localhost:3000 |
